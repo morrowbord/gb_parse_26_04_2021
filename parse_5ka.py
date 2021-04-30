@@ -12,7 +12,7 @@ class Parse5ka:
     }
     __parse_time = 0
 
-    def __init__(self, start_url, save_path, delay=0.2):
+    def __init__(self, start_url, save_path, delay=0.5):
         self.start_url = start_url
         self.save_path = save_path
         self.delay = delay
@@ -78,8 +78,8 @@ def get_save_dir(dir_name):
 if __name__ == "__main__":
     url = "https://5ka.ru/api/v2/special_offers/"
     cat_url = "https://5ka.ru/api/v2/categories/"
-    save_path_products = get_save_dir("products")
+    # save_path_products = get_save_dir("products")
     save_path_categories = get_save_dir("categories")
-    parser_products = Parse5ka(url, save_path_products)
+    # parser_products = Parse5ka(url, save_path_products)
     cat_parser = CategoriesParser(cat_url, url, save_path_categories)
     cat_parser.run()
